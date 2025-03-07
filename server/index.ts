@@ -1,11 +1,13 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { createServer } from "net";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Add request logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -57,15 +59,30 @@ app.use((req, res, next) => {
   log("Attempting to start server...");
   const port = 5000;
 
-  server.listen({
-    port,
-    host: "0.0.0.0",
-  })
-  .on('listening', () => {
-    log(`Server started successfully on port ${port}`);
-  })
-  .on('error', (error: any) => {
-    log(`Failed to start server: ${error.message}`);
-    process.exit(1);
-  });
+  // Try to detect if the port is in use
+  const tester = createServer()
+    .once('error', (err: any) => {
+      if (err.code === 'EADDRINUSE') {
+        log(`Port ${port} is already in use. Please ensure no other instances are running.`);
+        process.exit(1);
+      } else {
+        log(`Failed to start server: ${err.message}`);
+        process.exit(1);
+      }
+    })
+    .once('listening', () => {
+      tester.close();
+      server.listen({
+        port,
+        host: "0.0.0.0",
+      })
+      .on('listening', () => {
+        log(`Server started successfully on port ${port}`);
+      })
+      .on('error', (error: any) => {
+        log(`Failed to start server: ${error.message}`);
+        process.exit(1);
+      });
+    })
+    .listen(port);
 })();
