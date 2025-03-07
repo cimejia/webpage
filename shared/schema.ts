@@ -21,10 +21,22 @@ export const experiences = pgTable("experiences", {
   description: text("description").notNull()
 });
 
+export const teachings = pgTable("teachings", {
+  id: serial("id").primaryKey(),
+  courseName: text("course_name").notNull(),
+  courseCode: text("course_code"),
+  institution: text("institution").notNull(),
+  lastTaught: timestamp("last_taught").notNull(),
+  description: text("description")
+});
+
 export const insertPublicationSchema = createInsertSchema(publications).omit({ id: true });
 export const insertExperienceSchema = createInsertSchema(experiences).omit({ id: true });
+export const insertTeachingSchema = createInsertSchema(teachings).omit({ id: true });
 
 export type Publication = typeof publications.$inferSelect;
 export type Experience = typeof experiences.$inferSelect;
+export type Teaching = typeof teachings.$inferSelect;
 export type InsertPublication = z.infer<typeof insertPublicationSchema>;
 export type InsertExperience = z.infer<typeof insertExperienceSchema>;
+export type InsertTeaching = z.infer<typeof insertTeachingSchema>;

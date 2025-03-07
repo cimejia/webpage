@@ -118,3 +118,38 @@ export const SAMPLE_EXPERIENCES = [
     description: "Led research team in developing novel machine learning algorithms for computer vision applications."
   }
 ];
+
+export const SAMPLE_TEACHINGS = [
+  {
+    id: 1,
+    courseName: "Advanced Machine Learning",
+    courseCode: "CS601",
+    institution: "Tech University",
+    lastTaught: new Date("2024-12-15"),
+    description: "Graduate-level course covering deep learning, reinforcement learning, and advanced ML concepts."
+  },
+  {
+    id: 2,
+    courseName: "Introduction to Artificial Intelligence",
+    courseCode: "CS401",
+    institution: "Tech University",
+    lastTaught: new Date("2024-01-15"),
+    description: "Undergraduate course introducing fundamental concepts of AI, including search algorithms, knowledge representation, and basic machine learning."
+  },
+  {
+    id: 3,
+    courseName: "Ethics in Artificial Intelligence",
+    courseCode: "CS455",
+    institution: "Tech University",
+    lastTaught: new Date("2023-05-30"),
+    description: "Senior-level course examining ethical implications of AI development and deployment in society."
+  },
+  {
+    id: 4,
+    courseName: "Natural Language Processing",
+    courseCode: "CS602",
+    institution: "Tech University",
+    lastTaught: new Date("2023-12-15"),
+    description: "Advanced course covering modern NLP techniques, transformer architectures, and language models."
+  }
+];

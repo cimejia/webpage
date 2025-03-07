@@ -6,6 +6,7 @@ import { Navigation } from "@/components/Navigation";
 import About from "@/pages/About";
 import Publications from "@/pages/Publications";
 import Experience from "@/pages/Experience";
+import Teaching from "@/pages/Teaching";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
@@ -15,6 +16,7 @@ function Router() {
       <Route path="/" component={About} />
       <Route path="/publications" component={Publications} />
       <Route path="/experience" component={Experience} />
+      <Route path="/teaching" component={Teaching} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
