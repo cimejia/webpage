@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { PROFILE } from "@/lib/data";
+import { AcademicSocials } from "@/components/AcademicSocials";
 
 export default function About() {
   return (
@@ -15,8 +16,9 @@ export default function About() {
                 className="object-cover"
               />
             </div>
+            <AcademicSocials {...PROFILE.academic} />
           </div>
-          
+
           <div className="space-y-6">
             <div>
               <h1 className="text-4xl font-bold mb-2">{PROFILE.name}</h1>
@@ -26,7 +28,7 @@ export default function About() {
 
             <div className="space-y-4">
               <p className="text-lg leading-relaxed">{PROFILE.about}</p>
-              
+
               <div>
                 <h3 className="text-lg font-semibold mb-2">Research Interests</h3>
                 <div className="flex flex-wrap gap-2">

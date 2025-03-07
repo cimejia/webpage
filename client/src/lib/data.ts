@@ -23,6 +23,13 @@ export const PROFILE = {
     twitter: "@drjanesmith",
     linkedin: "linkedin.com/in/drjanesmith",
     github: "github.com/drjanesmith"
+  },
+  academic: {
+    orcid: "https://orcid.org/0000-0000-0000-0000",
+    researchgate: "https://www.researchgate.net/profile/Jane-Smith",
+    googleScholar: "https://scholar.google.com/citations?user=ABC123",
+    webOfScience: "https://www.webofscience.com/researcher/ABC123",
+    researchId: "https://www.researcherid.com/rid/ABC-1234-2024"
   }
 };
 
