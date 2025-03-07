@@ -52,19 +52,29 @@ export const trainings = pgTable("trainings", {
   description: text("description")
 });
 
+export const visits = pgTable("visits", {
+  id: serial("id").primaryKey(),
+  page: text("page").notNull(),
+  count: serial("count").notNull(),
+  lastVisit: timestamp("last_visit").notNull().defaultNow()
+});
+
 export const insertPublicationSchema = createInsertSchema(publications).omit({ id: true });
 export const insertProjectSchema = createInsertSchema(projects).omit({ id: true });
 export const insertTeachingSchema = createInsertSchema(teachings).omit({ id: true });
 export const insertThesisSchema = createInsertSchema(theses).omit({ id: true });
 export const insertTrainingSchema = createInsertSchema(trainings).omit({ id: true });
+export const insertVisitSchema = createInsertSchema(visits).omit({ id: true });
 
 export type Publication = typeof publications.$inferSelect;
 export type Project = typeof projects.$inferSelect;
 export type Teaching = typeof teachings.$inferSelect;
 export type Thesis = typeof theses.$inferSelect;
 export type Training = typeof trainings.$inferSelect;
+export type Visit = typeof visits.$inferSelect;
 export type InsertPublication = z.infer<typeof insertPublicationSchema>;
 export type InsertProject = z.infer<typeof insertProjectSchema>;
 export type InsertTeaching = z.infer<typeof insertTeachingSchema>;
 export type InsertThesis = z.infer<typeof insertThesisSchema>;
 export type InsertTraining = z.infer<typeof insertTrainingSchema>;
+export type InsertVisit = z.infer<typeof insertVisitSchema>;

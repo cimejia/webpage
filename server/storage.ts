@@ -1,38 +1,26 @@
-import { users, type User, type InsertUser } from "@shared/schema";
-
-// modify the interface with any CRUD methods
-// you might need
+import { visits, type Visit, type InsertVisit } from "@shared/schema";
 
 export interface IStorage {
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  incrementVisit(page: string): Promise<number>;
+  getVisitCount(page: string): Promise<number>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  currentId: number;
+  private visits: Map<string, number>;
 
   constructor() {
-    this.users = new Map();
-    this.currentId = 1;
+    this.visits = new Map();
   }
 
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+  async incrementVisit(page: string): Promise<number> {
+    const currentCount = this.visits.get(page) || 0;
+    const newCount = currentCount + 1;
+    this.visits.set(page, newCount);
+    return newCount;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async getVisitCount(page: string): Promise<number> {
+    return this.visits.get(page) || 0;
   }
 }
 

@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { PROFILE } from "@/lib/data";
 import { AcademicSocials } from "@/components/AcademicSocials";
+import { VisitCounter } from "@/components/VisitCounter";
 
 export default function About() {
   return (
@@ -58,6 +59,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        <VisitCounter page="about" />
       </div>
     </div>
   );
