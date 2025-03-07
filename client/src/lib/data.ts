@@ -153,3 +153,42 @@ export const SAMPLE_TEACHINGS = [
     description: "Advanced course covering modern NLP techniques, transformer architectures, and language models."
   }
 ];
+
+export const SAMPLE_THESES = [
+  {
+    id: 1,
+    studentName: "Michael Chen",
+    title: "Deep Learning Approaches for Medical Image Analysis",
+    degreeLevel: "PhD",
+    year: "2024",
+    status: "Ongoing",
+    description: "Research focusing on developing novel deep learning architectures for medical imaging diagnostics."
+  },
+  {
+    id: 2,
+    studentName: "Sarah Johnson",
+    title: "Ethical AI Decision Making in Autonomous Systems",
+    degreeLevel: "PhD",
+    year: "2023",
+    status: "Completed",
+    description: "Development of framework for implementing ethical decision-making in autonomous AI systems."
+  },
+  {
+    id: 3,
+    studentName: "David Rodriguez",
+    title: "Federated Learning for Privacy-Preserving Healthcare Analytics",
+    degreeLevel: "Masters",
+    year: "2023",
+    status: "Completed",
+    description: "Implementation of federated learning techniques for secure medical data analysis across institutions."
+  },
+  {
+    id: 4,
+    studentName: "Emily Taylor",
+    title: "Transformer-based Models for Scientific Text Understanding",
+    degreeLevel: "Masters",
+    year: "2024",
+    status: "Ongoing",
+    description: "Developing specialized language models for scientific literature analysis and knowledge extraction."
+  }
+];

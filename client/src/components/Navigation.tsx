@@ -6,6 +6,7 @@ const navItems = [
   { path: "/publications", label: "Publications" },
   { path: "/experience", label: "Experience" },
   { path: "/teaching", label: "Teaching" },
+  { path: "/theses", label: "Theses" },
   { path: "/contact", label: "Contact" }
 ];
 
