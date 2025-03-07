@@ -40,16 +40,29 @@ export const theses = pgTable("theses", {
   description: text("description")
 });
 
+export const trainings = pgTable("trainings", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  organization: text("organization").notNull(),
+  duration: text("duration").notNull(),
+  date: timestamp("date").notNull(),
+  audience: text("audience").notNull(),
+  description: text("description")
+});
+
 export const insertPublicationSchema = createInsertSchema(publications).omit({ id: true });
 export const insertExperienceSchema = createInsertSchema(experiences).omit({ id: true });
 export const insertTeachingSchema = createInsertSchema(teachings).omit({ id: true });
 export const insertThesisSchema = createInsertSchema(theses).omit({ id: true });
+export const insertTrainingSchema = createInsertSchema(trainings).omit({ id: true });
 
 export type Publication = typeof publications.$inferSelect;
 export type Experience = typeof experiences.$inferSelect;
 export type Teaching = typeof teachings.$inferSelect;
 export type Thesis = typeof theses.$inferSelect;
+export type Training = typeof trainings.$inferSelect;
 export type InsertPublication = z.infer<typeof insertPublicationSchema>;
 export type InsertExperience = z.infer<typeof insertExperienceSchema>;
 export type InsertTeaching = z.infer<typeof insertTeachingSchema>;
 export type InsertThesis = z.infer<typeof insertThesisSchema>;
+export type InsertTraining = z.infer<typeof insertTrainingSchema>;

@@ -8,6 +8,7 @@ import Publications from "@/pages/Publications";
 import Experience from "@/pages/Experience";
 import Teaching from "@/pages/Teaching";
 import Theses from "@/pages/Theses";
+import Trainings from "@/pages/Trainings";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/experience" component={Experience} />
       <Route path="/teaching" component={Teaching} />
       <Route path="/theses" component={Theses} />
+      <Route path="/trainings" component={Trainings} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>

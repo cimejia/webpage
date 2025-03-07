@@ -192,3 +192,42 @@ export const SAMPLE_THESES = [
     description: "Developing specialized language models for scientific literature analysis and knowledge extraction."
   }
 ];
+
+export const SAMPLE_TRAININGS = [
+  {
+    id: 1,
+    title: "Deep Learning with PyTorch",
+    organization: "AI Research Institute",
+    duration: "2 days",
+    date: new Date("2024-02-15"),
+    audience: "Industry Professionals",
+    description: "Intensive workshop on implementing deep learning models using PyTorch, covering both theoretical foundations and practical applications."
+  },
+  {
+    id: 2,
+    title: "Ethical AI Development",
+    organization: "Tech Ethics Foundation",
+    duration: "1 day",
+    date: new Date("2024-01-20"),
+    audience: "Software Engineers",
+    description: "Workshop focusing on implementing ethical principles in AI development, including bias detection and mitigation strategies."
+  },
+  {
+    id: 3,
+    title: "Advanced NLP Techniques",
+    organization: "Language AI Summit",
+    duration: "3 days",
+    date: new Date("2023-11-10"),
+    audience: "Researchers and Practitioners",
+    description: "Comprehensive training on state-of-the-art NLP techniques, including transformer architectures and their applications."
+  },
+  {
+    id: 4,
+    title: "Machine Learning for Healthcare",
+    organization: "Medical AI Institute",
+    duration: "2 days",
+    date: new Date("2023-09-25"),
+    audience: "Healthcare Professionals",
+    description: "Specialized course on applying machine learning in healthcare settings, focusing on medical image analysis and patient data privacy."
+  }
+];
