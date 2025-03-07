@@ -15,7 +15,7 @@ jobs:
       - name: Descomprimir archivo tar.gz
         run: |
           tar -xzvf archivo.tar.gz -C directorio_destino/
-          rm archivo.tar.gz  # Opcional: eliminar el archivo comprimido después de descomprimir
+          #rm archivo.tar.gz  # Opcional: eliminar el archivo comprimido después de descomprimir
 
       - name: Subir cambios al repositorio
         run: |
