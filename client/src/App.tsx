@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Navigation } from "@/components/Navigation";
 import About from "@/pages/About";
 import Publications from "@/pages/Publications";
-import Experience from "@/pages/Experience";
+import Projects from "@/pages/Projects";
 import Teaching from "@/pages/Teaching";
 import Theses from "@/pages/Theses";
 import Trainings from "@/pages/Trainings";
@@ -17,7 +17,7 @@ function Router() {
     <Switch>
       <Route path="/" component={About} />
       <Route path="/publications" component={Publications} />
-      <Route path="/experience" component={Experience} />
+      <Route path="/projects" component={Projects} />
       <Route path="/teaching" component={Teaching} />
       <Route path="/theses" component={Theses} />
       <Route path="/trainings" component={Trainings} />

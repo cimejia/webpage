@@ -101,21 +101,42 @@ export const SAMPLE_PUBLICATIONS = [
   }
 ];
 
-export const SAMPLE_EXPERIENCES = [
+export const SAMPLE_PROJECTS = [
   {
     id: 1,
-    title: "Professor of Artificial Intelligence",
-    organization: "Tech University",
-    startDate: new Date("2018-01-01"),
-    description: "Leading research in AI and machine learning, teaching graduate courses in deep learning and NLP."
+    title: "AI-Powered Medical Diagnosis System",
+    description: "Developed a deep learning system for automated medical image analysis, focusing on early detection of various conditions using computer vision techniques.",
+    technologies: ["Python", "TensorFlow", "PyTorch", "Docker", "AWS"],
+    startDate: new Date("2023-06-01"),
+    endDate: new Date("2024-02-28"),
+    url: "https://github.com/medicalai-project",
+    status: "Completed"
   },
   {
     id: 2,
-    title: "Senior Research Scientist",
-    organization: "AI Research Lab",
-    startDate: new Date("2014-01-01"),
-    endDate: new Date("2017-12-31"),
-    description: "Led research team in developing novel machine learning algorithms for computer vision applications."
+    title: "Privacy-Preserving Federated Learning Framework",
+    description: "Leading the development of a framework that enables collaborative machine learning while maintaining data privacy across multiple institutions.",
+    technologies: ["Python", "PyTorch", "Cryptography", "Kubernetes"],
+    startDate: new Date("2023-09-01"),
+    status: "Ongoing"
+  },
+  {
+    id: 3,
+    title: "Ethical AI Decision-Making Platform",
+    description: "Created a platform for evaluating and ensuring ethical considerations in AI systems, including bias detection and fairness metrics.",
+    technologies: ["Python", "React", "Node.js", "PostgreSQL"],
+    startDate: new Date("2023-03-01"),
+    endDate: new Date("2023-12-15"),
+    url: "https://ethicalai-platform.org",
+    status: "Completed"
+  },
+  {
+    id: 4,
+    title: "NLP-Based Research Literature Analysis",
+    description: "Building an intelligent system for analyzing and summarizing scientific literature using advanced NLP techniques.",
+    technologies: ["Python", "Transformers", "BERT", "Elasticsearch"],
+    startDate: new Date("2024-01-01"),
+    status: "Ongoing"
   }
 ];
 
