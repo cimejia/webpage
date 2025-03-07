@@ -1,0 +1,26 @@
+name: Descomprimir archivo tar.gz
+
+on:
+  push:
+    paths:
+      - '**.tar.gz'  # Se activa cuando se sube un archivo tar.gz
+
+jobs:
+  descomprimir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Descomprimir archivo tar.gz
+        run: |
+          tar -xzvf archivo.tar.gz -C directorio_destino/
+          rm archivo.tar.gz  # Opcional: eliminar el archivo comprimido después de descomprimir
+
+      - name: Subir cambios al repositorio
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Archivo tar.gz descomprimido automáticamente"
+          git push
